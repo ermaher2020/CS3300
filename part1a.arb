@@ -1,0 +1,9 @@
+rails generate scaffold Projects title:string description:text
+rake db:migrate
+
+rails s -b 0.0.0.0
+
+Rails.application.routes.draw do
+    root "project#index"
+    resources :Projects
+end
