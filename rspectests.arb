@@ -1,0 +1,72 @@
+require "rails_helper"
+
+# User view student projects
+RSpec.describe "Can all users view the projects? " do
+  it "should display all student projects" do
+    expect(projects).display
+  end
+end
+
+# Can edit
+RSpec.describe "Can the student edit a project?" do
+  it "should allow the student to edit an existing project" do
+    expect(projects).edit
+  end
+end
+
+# Can add
+RSpec.describe "Can the student add a project?" do
+    it "should allow the student to add a project" do
+      expect(projects).add
+    end
+  end
+
+# Can delete
+RSpec.describe "Can the student delete a project?" do
+  it "should allow the student to delete a project" do
+    expect(projects).delete
+  end
+end
+
+# Username and password requirement
+RSpec.describe "Does the program require a username and password?" do
+    it "should prompt the user for a username and password before gaining access to the portfolio" do
+      expect(login).verify 
+    end
+  end
+
+# Functional table display
+RSpec.describe "Does the program display all projects in the proper table format?" do
+  it "should display all existing projects in a neat table" do
+    expect(display)
+  end
+end
+
+# Project title and description
+RSpec.describe "Does each project properly display a title and description?" do
+    it "should properly display the project's title and description as written by the student" do
+      expect(display).title
+      expect(display).description
+    end
+  end
+
+# Mobile compatibility
+RSpec.describe "Is the portfolio accessible on mobile?" do
+    it "should be viewable through any mobile device" do
+      expect(mobile).type
+    end
+  end
+
+# Does the portfolio have proper connectivity to the internet
+RSpec.describe "Is the portfolio compatibile with most/all internet browsers?" do
+    it "project requirements say that it should be viewable on all browsers" do
+      expect(network)
+    end
+  end
+
+# Project contents
+RSpec.describe "Does each project properly display its contents to users?" do
+    it "should display all written content from the student" do
+      expect(display).contents
+    end
+  end
